@@ -13,7 +13,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import ru.yura.iae.model.Entry;
 import ru.yura.iae.view.LayoutController;
@@ -29,7 +28,7 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private Parent rootLayout;
     private Scene scene;
-
+    private LayoutController controller;
     
      
     @Override
@@ -38,6 +37,7 @@ public class MainApp extends Application {
         this.primaryStage.setTitle("IAEApp");
         
         initRootLayout();
+        
     }
     
     /**
@@ -57,7 +57,7 @@ public class MainApp extends Application {
             primaryStage.show();
             
             //Set link MainApp to Controller
-            LayoutController controller = loader.getController();
+            controller = loader.getController();
             controller.setMainApp(this);
             
         } catch (Exception e) {
@@ -70,6 +70,7 @@ public class MainApp extends Application {
             scene=new Scene(rootLayout);
             getPriStage().setScene(scene);
             getPriStage().show();
+
         } catch (IOException ex) {
             System.out.println("NoNoNo");
         }

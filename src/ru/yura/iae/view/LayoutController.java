@@ -9,13 +9,13 @@ package ru.yura.iae.view;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
 import ru.yura.iae.MainApp;
 
 /**
@@ -30,6 +30,9 @@ public class LayoutController implements Initializable {
     
     @FXML
     private TextField logField;
+    
+    @FXML
+    private Text warningText;
     
     
     private MainApp mainApp;
@@ -49,16 +52,20 @@ public class LayoutController implements Initializable {
     
     @FXML
     private void handleLogOnButton() throws IOException{
-        
+        if (logField.getText().isEmpty()){
+            warningText.setVisible(true);
+        }else
         mainApp.showWorkLayout();
+
         
         
     }
     
-    public void keyEnterPressed(KeyEvent event){
+    @FXML
+    public void keyEnterPressed(KeyEvent event) throws IOException{
         if (event.getCode()== KeyCode.ENTER){
-            mainApp.showWorkLayout();
+            handleLogOnButton();
         }
     }
-    
+
 }

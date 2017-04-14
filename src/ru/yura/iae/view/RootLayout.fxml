@@ -15,14 +15,15 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="logField" layoutX="187.0" layoutY="175.0" onKeyPressed="#keyEnterPressed"  />
-            <Button fx:id="logOnBut" layoutX="340.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleLogOnButton" text="LogOn" />
-            <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Exit" />
-            <Label layoutX="196.0" layoutY="143.0" text="Enter Your Name:">
+            <TextField fx:id="logField" layoutX="187.0" layoutY="175.0" onKeyPressed="#keyEnterPressed" promptText="Имя" />
+            <Button fx:id="logOnBut" layoutX="340.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleLogOnButton" text="Вход" />
+            <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Выход" />
+            <Label layoutX="196.0" layoutY="143.0" text="Введите своё имя:">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
             </Label>
+            <Text fx:id="warningText" fill="#566add" layoutX="229.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите совё имя..." visible="false" />
          </children>
       </AnchorPane>
    </center>
