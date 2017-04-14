@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -7,11 +11,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.yura.iae.view.LayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.yura.iae.view.LayoutController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="logField" layoutX="187.0" layoutY="175.0" />
+            <TextField fx:id="logField" layoutX="187.0" layoutY="175.0" onKeyPressed="#keyEnterPressed"  />
             <Button fx:id="logOnBut" layoutX="340.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleLogOnButton" text="LogOn" />
             <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="Exit" />
             <Label layoutX="196.0" layoutY="143.0" text="Enter Your Name:">

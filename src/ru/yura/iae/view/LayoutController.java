@@ -5,14 +5,17 @@
  */
 package ru.yura.iae.view;
 
-import java.awt.event.KeyEvent;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import ru.yura.iae.MainApp;
 
 /**
@@ -52,10 +55,10 @@ public class LayoutController implements Initializable {
         
     }
     
-    @FXML
-    private void handleKeyEnterPress(KeyEvent keyEvent){
-        if (keyEvent.getKeyCode()==KeyEvent.VK_ENTER){
+    public void keyEnterPressed(KeyEvent event){
+        if (event.getCode()== KeyCode.ENTER){
             mainApp.showWorkLayout();
         }
     }
+    
 }
